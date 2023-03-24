@@ -6,35 +6,26 @@ This workflow is useful when optimizing workspaces and following HashiCorp best 
 
 In this example, we'll first deploy a Security Group in AWS within an initial workspace, and then move the resource to a new workspace.
 
-### Overview
-<details>
-<summary>click to expand</summary>
-
+## Overview
+----
 At a high level, here are the steps involved:
 
-<b>New Workspace</b>
+### New Workspace
 1. Import configuration from old workspace (resource blocks)
 1. Import resource into workspace
 
-<b>Old Workspace</b>
+### Old Workspace 
 1. Remove configuration from code
 1. Remove resource(s) from workspace
 
-</details>
-
-### Prerequisites
-<details>
-<summary>click to expand</summary>
-
+## Prerequisites
+----
 1. jq utility | [download links](https://stedolan.github.io/jq/download/)
 1. Authenticated to TFC/E via CLI (run `terraform login`)
 1. Modify TFC/E org name in `versions.tf` in each workspace directory
-</details>
 
-### Procedure
-<details>
-<summary>click to expand</summary>
-
+## Procedure
+----
 1. Change directory into the old workspace and run the example deployment
 
     ```sh
@@ -142,11 +133,9 @@ At a high level, here are the steps involved:
 
     Terraform has compared your real infrastructure against your configuration and found no differences, so no changes are needed.
     ```
-</details>
 
-### Cleanup
-<details>
-<summary>click to expand</summary>
+## Cleanup
+----
 1. Run `terraform destroy` within each workspace directory
 
     ```hcl
@@ -157,4 +146,3 @@ At a high level, here are the steps involved:
 
     Apply complete! Resources: 0 added, 0 changed, 1 destroyed.
     ```
-</details>
