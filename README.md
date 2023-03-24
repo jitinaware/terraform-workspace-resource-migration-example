@@ -35,10 +35,9 @@ At a high level, here are the steps involved:
 
 1. Change directory into the old workspace and run the example deployment
 
-    ```sh
-    cd old_workspace
-    ```
-    ```hcl
+    ```terraform
+    cd old_workspace/
+    
     terraform init
     terraform plan
     terraform apply --auto-approve
