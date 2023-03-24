@@ -6,26 +6,33 @@ This workflow is useful when optimizing workspaces and following HashiCorp best 
 
 In this example, we'll first deploy a Security Group in AWS within an initial workspace, and then move the resource to a new workspace.
 
+## Navigation
+
+- [Overview](https://github.com/jitinaware/terraform-workspace-resource-migration-example#overview)
+- [Prerequisites](https://github.com/jitinaware/terraform-workspace-resource-migration-example#prerequisites)
+- [Procedure](https://github.com/jitinaware/terraform-workspace-resource-migration-example#procedure)
+- [Cleanup](https://github.com/jitinaware/terraform-workspace-resource-migration-example#cleanup)
+
 ## Overview
-----
+
 At a high level, here are the steps involved:
 
-### New Workspace
+<b>New Workspace</b>
 1. Import configuration from old workspace (resource blocks)
 1. Import resource into workspace
 
-### Old Workspace 
+<b>Old Workspace</b>
 1. Remove configuration from code
 1. Remove resource(s) from workspace
 
 ## Prerequisites
-----
+
 1. jq utility | [download links](https://stedolan.github.io/jq/download/)
 1. Authenticated to TFC/E via CLI (run `terraform login`)
 1. Modify TFC/E org name in `versions.tf` in each workspace directory
 
 ## Procedure
-----
+
 1. Change directory into the old workspace and run the example deployment
 
     ```sh
@@ -135,7 +142,7 @@ At a high level, here are the steps involved:
     ```
 
 ## Cleanup
-----
+
 1. Run `terraform destroy` within each workspace directory
 
     ```hcl
