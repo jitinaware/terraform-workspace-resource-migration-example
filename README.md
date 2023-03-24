@@ -35,9 +35,9 @@ At a high level, here are the steps involved:
 
 1. Change directory into the old workspace and run the example deployment
 
-    ```terraform
+    ```hcl
     cd old_workspace/
-    
+
     terraform init
     terraform plan
     terraform apply --auto-approve
@@ -74,10 +74,8 @@ At a high level, here are the steps involved:
 
 1. Next, let's change directory to the new workspace and run a Terraform plan to see what happens:
 
-    ```sh
-    cd ../new_workspace/
-    ```
     ```hcl
+    cd ../new_workspace/
     terraform init
     terraform plan
 
@@ -122,10 +120,9 @@ At a high level, here are the steps involved:
 
 1. Once successful, we can remove the resource from the old workspace
 
-    ```sh
-    cd ../old_workspace/
-    ```
     ```hcl
+    cd ../old_workspace/
+    
     terraform state rm aws_security_group.base
 
     Removed aws_security_group.base
